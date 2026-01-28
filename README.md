@@ -10,13 +10,13 @@ By Golan Levin, 2002 (restored 2026)
 
 ### Implementations and Code
 
-**Axis** was originally developed as a Java applet in 2002. In January 2026, it was ported to Processing version of Java, as well as the p5.js toolkit for JavaScript. The p5.js version can be experienced interactively in a browser [**here**](https://editor.p5js.org/golan/full/3xIyYPpVW).
+**Axis** was originally developed as a Java applet in 2002. In January 2026, it was ported to Processing toolkit for Java, as well as the p5.js toolkit for JavaScript. The p5.js version can be experienced interactively in a browser [**here**](https://editor.p5js.org/golan/full/3xIyYPpVW).
 
 * Original Java version (2002): [code](AxisApplet2002_java/AxisApplet.java)
-* Restored Java version (Processing 4.x, 2026): [code](AxisApplet2026_processing/AxisApplet2026_processing.pde)
-* JavaScript version (p5.js v.1.11.11, 2026): [code](AxisApplet2026_p5js/sketch.js)
-* p5.js v.1.11.11 (at editor.p5js.org, 2026): [code](https://editor.p5js.org/golan/sketches/3xIyYPpVW) • [**interactive**](https://editor.p5js.org/golan/full/3xIyYPpVW)
-* p5.js v.1.11.11 (at OpenProcessing.org, 2026): [code](https://openprocessing.org/sketch/2858463)
+* Restored Java version (Processing v4.5.1, 2026): [code](AxisApplet2026_processing/AxisApplet2026_processing.pde)
+* JavaScript version (p5.js v1.11.11, 2026): [code](AxisApplet2026_p5js/sketch.js)
+* p5.js v1.11.11 (at editor.p5js.org, 2026): [code](https://editor.p5js.org/golan/sketches/3xIyYPpVW) • [**interactive**](https://editor.p5js.org/golan/full/3xIyYPpVW)
+* p5.js v1.11.11 (at OpenProcessing.org, 2026): [code](https://openprocessing.org/sketch/2858463)
 * Code "highlights" (excerpts): [document](code_highlights.java)
 
 ---

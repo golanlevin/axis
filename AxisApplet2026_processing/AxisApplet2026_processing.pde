@@ -1,9 +1,9 @@
 /*
-AxisApplet by Golan Levin
+ AxisApplet by Golan Levin
  http://www.flong.com/
  15 August 2002.
  
- Ported to Processing, January 2026.
+ Ported to Processing v.4.5.1, January 2026.
  
  -------------------------
  "An Axis can't have more than three countries," explained Iraqi President
@@ -87,6 +87,7 @@ color colu;
 
 void setup() {
   size(919, 540);
+  pixelDensity(1);
   
   // Load and set up fonts
   ctryFont = createFont("Helvetica-Bold", 14);
