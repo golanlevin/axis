@@ -1,4 +1,20 @@
 /*
+About this project
+**Axis** (2002: Golan Levin) is a whimsical interactive data visualization,
+commissioned by the Whitney Museum for its Artport website. A dozen artists
+were invited by curator Christiane Paul to respond to a specific assignment
+in a programming language of their choice. The assignment was to 'connect
+and move three points in space,' which obviously could be interpreted in a
+literal or abstract way. The code itself was not to exceed 8 kilobytes,
+which equals a fairly short text document. My contribution, *Axis*, is an
+interactive applet driven by a simple database of arcane sociopolitical 
+factoids. The project responds to Paul's challenge by allowing its users to
+connect three countries into a conceptual "Axis" defined by their common
+properties in this database. 
+*/ 
+
+
+/*
 AxisApplet by Golan Levin
 http://www.flong.com/
 15 August 2002.
