@@ -27,7 +27,7 @@ By Golan Levin, 2002 (restored 2026)
 > 
 > President Bush's recent assertion that North Korea, Iraq and Iran form an "Axis of Evil"<sup>2</sup> was more than a calculated political act — it was also an imaginatively formal, geometric one, which had the effect of erecting a monumental, virtual, globe-spanning triangle.
 > 
-> **Axis** is an online tool intended to broaden opportunities for similar kinds of Axis creation. It allows its participant to connect any three points in space [countries] into a new Axis of his or her own design. With the help of multidimensional statistical metrics culled from international public databases, the commonalities amongst the user's choices are revealed. In this manner, **Axis** presents an inversion of Bush's praxis, obtaining lexico-political meaning from the formal act of spatial selection.
+> **Axis** is an online tool intended to democratize opportunities for similar kinds of Axis creation. It allows any participant to connect any three points in space [countries] into a new Axis of his or her own design. With the help of multidimensional statistical metrics culled from international public databases, the commonalities amongst the user's choices are revealed. In this manner, **Axis** presents an inversion of Bush's praxis, obtaining lexico-political meaning from the formal act of spatial selection.
 > 
 > **References**
 > 
