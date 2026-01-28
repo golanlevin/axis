@@ -1,6 +1,6 @@
 # Axis
 
-By Golan Levin, 2002 (revised 2026)
+By Golan Levin, 2002 (restored 2026)
 
 ![Axis banner image](img/axis.jpg)
 
@@ -14,9 +14,9 @@ By Golan Levin, 2002 (revised 2026)
 
 * Original Java version (2002): [code](AxisApplet2002_java/AxisApplet.java)
 * Restored Java version (Processing 4.x, 2026): [code](AxisApplet2026_processing/AxisApplet2026_processing.pde)
-* JavaScript version (p5.js, 2026): [code](AxisApplet2026_p5js/sketch.js)
-* p5.js (at editor.p5js.org, 2026): [code](https://editor.p5js.org/golan/sketches/3xIyYPpVW) • [**interactive**](https://editor.p5js.org/golan/full/3xIyYPpVW)
-* p5.js (at OpenProcessing.org, 2026): [code](https://openprocessing.org/sketch/2858463)
+* JavaScript version (p5.js v.1.11.11, 2026): [code](AxisApplet2026_p5js/sketch.js)
+* p5.js v.1.11.11 (at editor.p5js.org, 2026): [code](https://editor.p5js.org/golan/sketches/3xIyYPpVW) • [**interactive**](https://editor.p5js.org/golan/full/3xIyYPpVW)
+* p5.js v.1.11.11 (at OpenProcessing.org, 2026): [code](https://openprocessing.org/sketch/2858463)
 * Code "highlights" (excerpts): [document](code_highlights.java)
 
 ---
