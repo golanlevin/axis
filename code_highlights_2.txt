@@ -1,0 +1,196 @@
+2       /*
+4       AxisApplet by Golan Levin
+6       http://www.flong.com/
+7       15 August 2002.
+9       
+13      "An Axis can't have more than three countries," explained Iraqi President
+15      Saddam Hussein. "This is not my rule, it's tradition. In World War II you
+17      had Germany, Italy, and Japan in the evil Axis. So you can only have three.
+19      And a secret handshake. Ours is wicked cool."[1]
+21      
+23      President Bush's recent assertion that North Korea, Iraq and Iran form an
+25      "Axis of Evil"[2] was more than a calculated political act -- it was also
+27      an imaginatively formal, geometric one, which had the effect of erecting a
+29      monumental, virtual, globe-spanning triangle.
+31      
+33      Axis is an online tool intended to broaden opportunities for similar kinds
+35      of Axis creation. It allows its participant to connect any three points in
+37      space [countries] into a new Axis of his or her own design. With the help
+39      of multidimensional statistical metrics culled from international public
+41      databases, the commonalities amongst the user's choices are revealed.
+43      In this manner, Axis presents an inversion of Bush's praxis, obtaining
+45      lexico-political meaning from the formal act of spatial selection.
+47      
+53      References:
+55      [1] "Angered by Snubbing, Libya, China, Syria Form 'Axis of Just as Evil'".
+57          SatireWire, 1/30/2002. http://www.satirewire.com/news/jan02/axis.shtml
+59      [2] "In Speech, Bush Calls Iraq, Iran and North Korea 'Axis of Evil'".
+61          State of the Union Address, 1/29/2002.
+111     */
+...  
+517     // Fetch and assemble the list of countries  
+519     ctryStr = "";
+523     if (nSelected > 0){
+525         long comProp1 = Long.MAX_VALUE;
+527         long comProp2 = Long.MAX_VALUE;
+529         for (int i=(nSelected-1);i>=0;i--){
+531             which = whichSel[i];
+533             if ((which>=0)&&(which<nCountries)){
+535                 ctryStr += countryNames[which]+((i>0)?", ":" :  ");
+537                 comProp1 &= countryProp1[which];  
+539                 comProp2 &= countryProp2[which];
+541                 iCh[i]=countryNames[which].charAt(0);
+543             }
+545         }
+551         if(doText){
+555             // intersect the properties
+557             int nCommonProp1 = 0;
+559             int nCommonProp2 = 0;
+561             for (int b=0;b<63;b++){ if(((comProp1>>>b)&1)>0){nCommonProp1++;}}
+563             for (int b=0;b<nProperties2; b++){if(((comProp2>>>b)&1)>0){nCommonProp2++;}}
+565             int nProps = nCommonProp1+nCommonProp2;
+567  
+569     // Use various grammatical rules to make something sensible
+571     axisStr2 = axisStr = "";
+573     if (nSelected == 3){
+575         boolean initial=((iCh[0]==iCh[1])&&(iCh[1]==iCh[2]));  
+577         if (nProps>0){
+579             axisStr="Axis of ";
+581             int prop=0;
+583             long common;
+585             int bit,strw;
+587             boolean wordy=false;
+589             for (int b=0;b<nProperties;b++){
+591                 common = (b<63)?comProp1:comProp2;
+593                 bit = (b<63)?b:(b-63);
+595                 if (((common>>>bit)&1)>0){
+597                     String pnb=propNames[b];
+599                     if((nProps==1)&&(propAdjs[b]>0)){
+601                         axisStr+="the "+pnb;  
+603                         if(initial){axisStr+=letStr+iCh[0];}
+605                         axisStr+=".";
+607                     } else {
+609                         strw=fa.stringWidth(axisStr+pnb);
+611                         if((++prop)<nProps){
+613                             if(wordy||(strw>AXI_W)){
+615                                 axisStr2+=pnb;
+617                                 if(propVerbs[b]>0){axisStr2+="ing";}
+619                                 axisStr2+=(nProps>2)?", ":" ";
+621                                 wordy=true;
+623                             } else {
+625                                 axisStr+=pnb;
+627                                 if(propVerbs[b]>0){axisStr+="ing";}
+629                                 axisStr+=(nProps>2)?", ":" ";
+631                             }
+...  
+659                         }
+661                     }
+663                 }
+665             }
+667         } else {
+669             if(initial){axisStr="Axis of countries"+letStr+iCh[0]+".";}
+671             else{axisStr="These countries have not yet registered their Axis.";}
+673         }
+675     }    
+...  
+787     void highlightCountryAtCursor(int x, int y){
+789         doText=true;
+791         csrIndex = -1;
+793         if ((x>=0)&&(x<APP_W)&&(y>=IY)&&(y<APP_H)){
+795             // Convert screen coords to pixel array index:
+797             csrIndex = (y-IY)*IW + x;  
+799             if ((csrIndex < NPELS)&&(csrIndex>=0)){
+801                 int ctryID = 0xFF & srcArray[csrIndex];  
+803                 if ((ctryID >=0) && (ctryID < nCountries)){
+805                     highlites[curCtryID=ctryID] = FF; // Mark for highlighting
+807                     liteStr = ""+countryNames[curCtryID];
+809                 } else {
+811                     liteStr="";
+813                 }
+815             }
+817         }
+819     }
+...  
+931     // The database tables of countries and their properties.
+933     static final String propNames[] = {
+935         "itsy-bitsy","small","huge","densely-populated",
+937         "sparsely-populated","long and skinny","peninsular","island-dwell",
+939         "landlocked","rainy","arid","cloudy",
+941         "earthquake-prone","officially polylingual","officially Anglophone","Portuguese-speak",
+943         "politically or territorially dependent","largely illiterate","heavily-indebted and poor","monarchic",
+945         "dictatorially autocratic","communist","Slavic","predominantly Muslim",
+947         "predominantly Catholic","predominantly Orthodox","predominantly Buddhist","Scandinavian",
+949         "Baltic","Mediterranean","South Asian","Southeast Asian",
+951         "Sub-Saharan African","Southern African","South American","Central American",
+953         "South Pacific","East Asian","Middle Eastern","Central European",
+955         "North African","Balkan","former Soviet","China-neighboring",
+957         "camel-driv","tiger-roamed","pachyderm-keep","Olympic badminton medal winn",
+959         "oil-produc","vodka-export","nuclear-powered","juvenile-offender execut",
+961         "tourism-dependent","Olympic judo Silver medal winn","violence-ravaged","pepper-produc",
+963         "cricket-play","oil-guzzl","cannabis-cultivat","bug-eat",
+965         "least corrupt","insufficiently-reproducing","fermented mare's milk drink","orange-white-and-green flag-wav",
+967         "US visa-waiver pilot-program participat","US bullet-buy","ancient pyramid-maintain","hydroelectric",
+969         "border-disput","AIDS crisis-stricken","perceived as egregiously corrupt","undersexed",
+971         "heavily landmined","person-traffick","shark-infested","Simpsons' travel destination",
+973         "former French colony","comparatively depressed","comparatively happy","former Ottoman",
+975         "former Sassanid","former Habsburg","former Roman","frequently lightning-struck",
+977         "Australopithecus fossil-hous","population-skyrocket","EU","UN Security Council Permanent Member",
+979         "G7","Fishery Committee for the Eastern Central Atlantic member"
+981     };
+...     
+1055    // Codes for the syntactic combination of properties:
+1057    // which properties are verbs, adjectives, etc. 
+1059    static final int propVerbs[] = {
+1061        0,0,0,0, 0,0,0,1, 0,0,0,0, 0,0,0,1,
+1063        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,
+1065        0,0,0,0, 0,0,0,0, 0,0,0,0, 1,0,1,1,
+1067        1,1,0,1, 0,1,0,1, 1,1,1,1, 0,0,1,1,
+1069        1,1,1,0, 1,0,0,0, 0,1,0,0, 0,0,0,0,
+1071        0,0,0,0, 1,1,0,0, 0,0,0,0, 0,1};
+1073    
+1075    static final int propAdjs[] = {
+1077        1,1,1,1, 1,1,0,0, 1,1,1,1, 1,1,1,0,
+1079        1,1,1,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,
+1081        0,0,0,0, 0,0,0,0, 0,0,0,0, 0,1,0,0,
+1083        0,0,0,0, 0,0,0,0, 0,0,0,0, 1,1,0,0,
+1085        0,0,0,0, 0,0,0,1, 1,0,1,0, 0,1,1,0,
+1087        0,0,0,1, 0,0,0,0, 0,0,0,0, 0,0};
+1089  
+1091    // Binary property subscriptions, per country,
+1093    // represented compactly as decimal Longs.
+1095    // We have more property descriptors than bits in a Long,
+1097    // so we split the property annotations across two arrays.
+1099    static final long countryProp1[] = {
+1101      481603685151961092L,1668302186964082692L,907193884314963968L,869476237435731968L,
+1103      9288674250326176L,4503599644160128L,4785074620858496L,293296960109035522L,
+1105      864691162831917056L,576460786680205568L,292734010155602432L,4785108980597248L,
+...  
+1195    };
+...  
+1253    /*
+1257    Databases referenced in this project:
+1259  
+1261        http://www.cia.gov/cia/publications/factbook/
+1263        http://www.fao.org/WAICENT/FAOINFO/SUSTDEV/EIdirect/climate/EIsp0007.htm
+1265        http://www.fao.org/WAICENT/FAOINFO/SUSTDEV/EIdirect/climate/EIsp0056.htm
+1267        http://www.fao.org/WAICENT/FAOINFO/SUSTDEV/EIdirect/climate/EIsp0009.htm
+1269        http://www.ethnologue.com/country_index.asp?place=all
+1271        http://www.ethnologue.com/show_language.asp?code=POR
+1273        http://unstats.un.org/unsd/mi/mi_results.asp?row_ID=656&fID=r5
+1275        http://www.worldbank.org/hipc/about/map/map.html
+1277        http://www.panda.org/species/tiger/distribution.cfm
+...  
+1287        http://www.deathpenaltyinfo.org/juvchar.html
+1289        http://www.olympic.org/uk/athletes/results/search_r_uk.asp
+1291        http://www.hotnsaucey.com/countries.html
+1293        http://www.cricket.org/link_to_database/NATIONAL/ICC/
+1295        http://www.bp.com/centres/energy2002/oil/consumption.asp#
+1297        http://www.food-insects.com/book7_31/
+1299        http://www.transparency.org/cpi/2001/cpi2001.html#cpi
+1301        http://138.251.140.21/~josh/flags/alpha.html
+1303        http://www.foreignborn.com/visas_imm/other_visas/11pilot_program.htm
+1305        http://www.unaids.org/barcelona/presskit/barcelona%20report/table.html
+1307        http://www.boston.com/news/daily/27/sex_chart.htm
+1309        http://www.landmines.org/glc/index-glc.asp
+...  
+1335    */
