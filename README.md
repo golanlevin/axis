@@ -4,7 +4,9 @@ By Golan Levin, 2002 (restored 2026)
 
 ![Axis banner image](img/axis.jpg)
 
-**Axis** (2002: Golan Levin) is a whimsical interactive data visualization, commissioned by the Whitney Museum for its Artport website. A dozen artists were invited by curator Christiane Paul to respond to a specific assignment in a programming language of their choice. The assignment was to 'connect and move three points in space,' which obviously could be interpreted in a literal or abstract way. The code itself was not to exceed 8 kilobytes, which equals a fairly short text document. My contribution, **Axis**, is an interactive applet driven by a simple database of arcane sociopolitical factoids. The project responds to Paul's challenge by allowing its users to connect three countries into a conceptual "Axis" defined by their common properties in this database. **Axis** can be experienced interactively online [**here**](https://editor.p5js.org/golan/full/3xIyYPpVW).
+**Axis** (2002: Golan Levin) is a whimsical interactive data visualization, commissioned by the Whitney Museum for its Artport website. A dozen artists were invited by curator Christiane Paul to respond to a specific assignment in a programming language of their choice. The assignment was to 'connect and move three points in space,' which obviously could be interpreted in a literal or abstract way. The code itself was not to exceed 8 kilobytes, which equals a fairly short text document. My contribution, **Axis**, is an interactive applet driven by a simple database of arcane sociopolitical factoids. The project responds to Paul's challenge by allowing its users to connect three countries into a conceptual "Axis" defined by their common properties in this database. **Axis** can be experienced interactively online [**here**](https://editor.p5js.org/golan/full/3xIyYPpVW). 
+
+**Axis** appeared in [*Artport: A History of Internet Art*](https://whitney.org/collection/works/18221), at the Whitney Museum of American Art, 2026.
 
 ---
 
@@ -14,9 +16,10 @@ By Golan Levin, 2002 (restored 2026)
 
 * Original Java version (2002): [code](AxisApplet2002_java/AxisApplet.java)
 * Restored Java version (Processing v4.5.1, 2026): [code](AxisApplet2026_processing/AxisApplet2026_processing.pde)
-* JavaScript version (p5.js v1.11.11, 2026): [code](AxisApplet2026_p5js/sketch.js)
-* p5.js v1.11.11 (at editor.p5js.org, 2026): [code](https://editor.p5js.org/golan/sketches/3xIyYPpVW) • [**interactive**](https://editor.p5js.org/golan/full/3xIyYPpVW)
-* p5.js v1.11.11 (at OpenProcessing.org, 2026): [code](https://openprocessing.org/sketch/2858463)
+* JavaScript version (p5.js v2.3.4, 2026): [code](AxisApplet2026_p5js_v2/sketch.js)
+* JavaScript version (p5.js v1.11.13, 2026): [code](AxisApplet2026_p5js_v1/sketch.js)
+* p5.js v2.3.4 (at editor.p5js.org, 2026): [code](https://editor.p5js.org/golan/sketches/3xIyYPpVW) • [**interactive**](https://editor.p5js.org/golan/full/3xIyYPpVW)
+* p5.js v2.3.4 (at OpenProcessing.org, 2026): [code](https://openprocessing.org/sketch/2858463)
 * Code "highlights" (excerpts): [document](code_highlights.java)
 
 ---
@@ -43,3 +46,4 @@ Below are screenshots of **Axis** running online at Whitney Artport, circa 2002.
 ![Axis in use](img/axis_1.jpg)
 
 ![Axis in use](img/axis_2.jpg)
+
